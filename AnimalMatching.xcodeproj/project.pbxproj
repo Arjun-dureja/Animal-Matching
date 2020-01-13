@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7220BD6A23CBCBAA0005912E /* AnimalMatchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220BD6923CBCBAA0005912E /* AnimalMatchingTests.swift */; };
+		726F65BB23CBDE6A008EF492 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 726F65B923CBDE6A008EF492 /* cardflip.wav */; };
+		726F65BC23CBDE6A008EF492 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 726F65BA23CBDE6A008EF492 /* shuffle.wav */; };
+		726F65BF23CBDEB1008EF492 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726F65BE23CBDEB0008EF492 /* AVFoundation.framework */; };
+		726F65C123CBDEF8008EF492 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F65C023CBDEF8008EF492 /* SoundManager.swift */; };
+		726F65C523CBE69B008EF492 /* matched.wav in Resources */ = {isa = PBXBuildFile; fileRef = 726F65C423CBE69B008EF492 /* matched.wav */; };
+		726F65C723CBE702008EF492 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 726F65C623CBE702008EF492 /* win.wav */; };
 		72CF6BAD23B42BC800F43CFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF6BAC23B42BC800F43CFB /* AppDelegate.swift */; };
 		72CF6BAF23B42BC800F43CFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF6BAE23B42BC800F43CFB /* SceneDelegate.swift */; };
 		72CF6BB123B42BC800F43CFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF6BB023B42BC800F43CFB /* ViewController.swift */; };
@@ -34,7 +40,13 @@
 		7220BD6723CBCBAA0005912E /* AnimalMatchingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalMatchingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7220BD6923CBCBAA0005912E /* AnimalMatchingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalMatchingTests.swift; sourceTree = "<group>"; };
 		7220BD6B23CBCBAA0005912E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72CF6BA923B42BC800F43CFB /* AnimalMatching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalMatching.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		726F65B923CBDE6A008EF492 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
+		726F65BA23CBDE6A008EF492 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
+		726F65BE23CBDEB0008EF492 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		726F65C023CBDEF8008EF492 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		726F65C423CBE69B008EF492 /* matched.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = matched.wav; sourceTree = "<group>"; };
+		726F65C623CBE702008EF492 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		72CF6BA923B42BC800F43CFB /* Animal Matching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animal Matching.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CF6BAC23B42BC800F43CFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72CF6BAE23B42BC800F43CFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		72CF6BB023B42BC800F43CFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726F65BF23CBDEB1008EF492 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,18 +88,38 @@
 			path = AnimalMatchingTests;
 			sourceTree = "<group>";
 		};
+		726F65B823CBDE48008EF492 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				726F65B923CBDE6A008EF492 /* cardflip.wav */,
+				726F65BA23CBDE6A008EF492 /* shuffle.wav */,
+				726F65C423CBE69B008EF492 /* matched.wav */,
+				726F65C623CBE702008EF492 /* win.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		726F65BD23CBDEB0008EF492 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				726F65BE23CBDEB0008EF492 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		72CF6BA023B42BC800F43CFB = {
 			isa = PBXGroup;
 			children = (
 				72CF6BAB23B42BC800F43CFB /* AnimalMatching */,
 				7220BD6823CBCBAA0005912E /* AnimalMatchingTests */,
+				726F65BD23CBDEB0008EF492 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		72CF6BAA23B42BC800F43CFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72CF6BA923B42BC800F43CFB /* AnimalMatching.app */,
+				72CF6BA923B42BC800F43CFB /* Animal Matching.app */,
 				7220BD6723CBCBAA0005912E /* AnimalMatchingTests.xctest */,
 			);
 			name = Products;
@@ -96,6 +129,7 @@
 		72CF6BAB23B42BC800F43CFB /* AnimalMatching */ = {
 			isa = PBXGroup;
 			children = (
+				726F65B823CBDE48008EF492 /* Sounds */,
 				72CF6BB223B42BC800F43CFB /* Main.storyboard */,
 				72CF6BAC23B42BC800F43CFB /* AppDelegate.swift */,
 				72CF6BAE23B42BC800F43CFB /* SceneDelegate.swift */,
@@ -107,6 +141,7 @@
 				72CF6BB523B42BCB00F43CFB /* Assets.xcassets */,
 				72CF6BB723B42BCB00F43CFB /* LaunchScreen.storyboard */,
 				72CF6BBA23B42BCB00F43CFB /* Info.plist */,
+				726F65C023CBDEF8008EF492 /* SoundManager.swift */,
 				72CF6BAA23B42BC800F43CFB /* Products */,
 			);
 			path = AnimalMatching;
@@ -147,7 +182,7 @@
 			);
 			name = AnimalMatching;
 			productName = ShopifyMatchingGame;
-			productReference = 72CF6BA923B42BC800F43CFB /* AnimalMatching.app */;
+			productReference = 72CF6BA923B42BC800F43CFB /* Animal Matching.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -201,8 +236,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				72CF6BB923B42BCB00F43CFB /* LaunchScreen.storyboard in Resources */,
+				726F65C523CBE69B008EF492 /* matched.wav in Resources */,
+				726F65BB23CBDE6A008EF492 /* cardflip.wav in Resources */,
 				72CF6BB623B42BCB00F43CFB /* Assets.xcassets in Resources */,
 				72CF6BB423B42BC800F43CFB /* Main.storyboard in Resources */,
+				726F65BC23CBDE6A008EF492 /* shuffle.wav in Resources */,
+				726F65C723CBE702008EF492 /* win.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72CF6BB123B42BC800F43CFB /* ViewController.swift in Sources */,
+				726F65C123CBDEF8008EF492 /* SoundManager.swift in Sources */,
 				72CF6BC123B45F0100F43CFB /* CardModel.swift in Sources */,
 				72CF6BC323B46F7A00F43CFB /* Card.swift in Sources */,
 				72CF6BAD23B42BC800F43CFB /* AppDelegate.swift in Sources */,
@@ -335,6 +375,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -395,6 +436,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -421,7 +463,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AnimalMatching/AnimalMatching.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KFKTY5JX3;
 				INFOPLIST_FILE = "$(SRCROOT)/AnimalMatching/Info.plist";
@@ -430,7 +471,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arjundureja.AnimalMatching;
-				PRODUCT_NAME = AnimalMatching;
+				PRODUCT_NAME = "Animal Matching";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -441,7 +482,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AnimalMatching/AnimalMatching.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KFKTY5JX3;
 				INFOPLIST_FILE = "$(SRCROOT)/AnimalMatching/Info.plist";
@@ -450,7 +490,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arjundureja.AnimalMatching;
-				PRODUCT_NAME = AnimalMatching;
+				PRODUCT_NAME = "Animal Matching";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

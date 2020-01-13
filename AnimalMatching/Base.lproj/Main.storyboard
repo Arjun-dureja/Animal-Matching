@@ -42,7 +42,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matched: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMa-54-Lir">
-                                                <rect key="frame" x="90" y="0.0" width="125" height="45"/>
+                                                <rect key="frame" x="90" y="0.0" width="145" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="EUH-g0-lnE"/>
                                                     <constraint firstAttribute="width" constant="150" id="hZ5-Px-atg"/>
@@ -53,9 +53,9 @@
                                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3U-wA-s8I">
-                                                <rect key="frame" x="215" y="0.0" width="120" height="45"/>
+                                                <rect key="frame" x="235" y="0.0" width="100" height="45"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="2Mn-K0-ook"/>
+                                                    <constraint firstAttribute="width" constant="100" id="2Mn-K0-ook"/>
                                                     <constraint firstAttribute="height" constant="50" id="OKa-L5-pEe"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
@@ -123,24 +123,24 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="112.66666666666667"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mnq-7l-B8Y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="112.66666666666667"/>
+                                                            <rect key="frame" x="5" y="5" width="65" height="102.66666666666667"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackCard" translatesAutoresizingMaskIntoConstraints="NO" id="2yL-Tk-GcQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="112.66666666666667"/>
+                                                            <rect key="frame" x="5" y="5" width="65" height="102.66666666666667"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="7cc-Cb-dlj" secondAttribute="bottom" id="11j-fw-qzN"/>
-                                                        <constraint firstItem="Mnq-7l-B8Y" firstAttribute="top" secondItem="0nV-N1-4cb" secondAttribute="top" id="1yP-CF-zXk"/>
-                                                        <constraint firstItem="2yL-Tk-GcQ" firstAttribute="leading" secondItem="0nV-N1-4cb" secondAttribute="leading" id="AfI-jI-60h"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2yL-Tk-GcQ" secondAttribute="bottom" id="QAR-7S-WXr"/>
+                                                        <constraint firstItem="Mnq-7l-B8Y" firstAttribute="top" secondItem="0nV-N1-4cb" secondAttribute="top" constant="5" id="1yP-CF-zXk"/>
+                                                        <constraint firstItem="2yL-Tk-GcQ" firstAttribute="leading" secondItem="0nV-N1-4cb" secondAttribute="leading" constant="5" id="AfI-jI-60h"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2yL-Tk-GcQ" secondAttribute="bottom" constant="5" id="QAR-7S-WXr"/>
                                                         <constraint firstItem="7cc-Cb-dlj" firstAttribute="leading" secondItem="0nV-N1-4cb" secondAttribute="leading" id="V0C-Lt-PUZ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Mnq-7l-B8Y" secondAttribute="trailing" id="W0u-8M-Udn"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Mnq-7l-B8Y" secondAttribute="bottom" id="YZ5-Jx-mle"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Mnq-7l-B8Y" secondAttribute="trailing" constant="5" id="W0u-8M-Udn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Mnq-7l-B8Y" secondAttribute="bottom" constant="5" id="YZ5-Jx-mle"/>
                                                         <constraint firstAttribute="trailing" secondItem="7cc-Cb-dlj" secondAttribute="trailing" id="cXY-0a-aqQ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2yL-Tk-GcQ" secondAttribute="trailing" id="ced-zf-OAe"/>
-                                                        <constraint firstItem="Mnq-7l-B8Y" firstAttribute="leading" secondItem="0nV-N1-4cb" secondAttribute="leading" id="iIb-RM-kan"/>
-                                                        <constraint firstItem="2yL-Tk-GcQ" firstAttribute="top" secondItem="0nV-N1-4cb" secondAttribute="top" id="jg9-nc-9DO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2yL-Tk-GcQ" secondAttribute="trailing" constant="5" id="ced-zf-OAe"/>
+                                                        <constraint firstItem="Mnq-7l-B8Y" firstAttribute="leading" secondItem="0nV-N1-4cb" secondAttribute="leading" constant="5" id="iIb-RM-kan"/>
+                                                        <constraint firstItem="2yL-Tk-GcQ" firstAttribute="top" secondItem="0nV-N1-4cb" secondAttribute="top" constant="5" id="jg9-nc-9DO"/>
                                                         <constraint firstItem="7cc-Cb-dlj" firstAttribute="top" secondItem="0nV-N1-4cb" secondAttribute="top" id="p9Q-gt-R5g"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
@@ -169,13 +169,16 @@
                     </view>
                     <connections>
                         <outlet property="cardCollectionView" destination="mrY-GM-bPg" id="ELC-Dv-g8r"/>
+                        <outlet property="homeBtn" destination="GeO-5b-FwQ" id="1Bb-tr-oik"/>
                         <outlet property="matchedLabel" destination="xMa-54-Lir" id="Woe-Rw-ObP"/>
+                        <outlet property="restartBtn" destination="Ggm-KT-wgJ" id="zRA-BG-yOy"/>
                         <outlet property="scoreLabel" destination="u3U-wA-s8I" id="URd-Uw-2Vf"/>
+                        <outlet property="shuffleBtn" destination="Thj-pR-OWF" id="SU6-rX-9P7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="118.52678571428571"/>
+            <point key="canvasLocation" x="130.40000000000001" y="118.22660098522168"/>
         </scene>
         <!--Home-->
         <scene sceneID="46H-is-d6Z">
@@ -261,6 +264,7 @@
                         <viewLayoutGuide key="safeArea" id="lhG-Eg-JwM"/>
                     </view>
                     <connections>
+                        <outlet property="play" destination="e4e-T3-Ouu" id="NkK-Ii-0vP"/>
                         <outlet property="slider" destination="acG-UJ-aHq" id="8ba-OP-gwF"/>
                     </connections>
                 </viewController>

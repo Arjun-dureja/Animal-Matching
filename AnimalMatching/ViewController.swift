@@ -16,6 +16,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var cardCollectionView: UICollectionView!
     
+    @IBOutlet weak var restartBtn: UIButton!
+    @IBOutlet weak var homeBtn: UIButton!
+    @IBOutlet weak var shuffleBtn: UIButton!
+    
     var model = CardModel()
     var cardArray = [Card]()
     
@@ -25,6 +29,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var matched = 0
     var score = 0
     var gridSize = 10
+    
+    var soundManager = SoundManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +53,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Set collection view background color to clear
         self.cardCollectionView?.backgroundColor = UIColor.clear
         self.cardCollectionView?.backgroundView = UIView(frame: CGRect.zero)
+        
+        // Make all buttons rounded
+        homeBtn.layer.cornerRadius = 10;
+        homeBtn.clipsToBounds = true;
+        shuffleBtn.layer.cornerRadius = 17;
+        shuffleBtn.clipsToBounds = true;
+        restartBtn.layer.cornerRadius = 15;
+        restartBtn.clipsToBounds = true;
     }
     
     // Collection view protocol methods
@@ -67,6 +81,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Flip card if it isn't already flipped
         if card.isFlipped == false {
+            soundManager.playSound(.flip)
             cell?.flip()
             card.isFlipped = true
             
@@ -94,6 +109,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if cardOne.imageName == cardTwo.imageName {
             cardOne.isMatched = true
             cardTwo.isMatched = true
+            soundManager.playSound(.matched)
             
             // Update score and matched counter
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
@@ -106,7 +122,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             // Check if all cards are matched
             if(checkWin()) {
-                
                 // Win alert
                 let alert = UIAlertController(title: "You Win!", message: "Score: \(score-1)", preferredStyle: .alert)
                 
@@ -121,6 +136,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                     self.present(alert, animated: true, completion: nil)
+                    self.soundManager.playSound(.win)
                 }
 
             }
@@ -157,6 +173,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     // Method called when shuffle button is pressed
     @IBAction func shuffleButton(_ sender: UIButton) {
+        soundManager.playSound(.shuffle)
         cardArray = model.shuffle(c: cardArray)
         
         // Update index of first card if it is selected before pressing the shuffle button
