@@ -204,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 72CF6BA423B42BC800F43CFB /* Build configuration list for PBXProject "AnimalMatching" */;
+			buildConfigurationList = 72CF6BA423B42BC800F43CFB /* Build configuration list for PBXProject "Animal Matching" */;
 			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -470,11 +470,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arjundureja.AnimalMatching;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ArjunDureja.AnimalMatching;
 				PRODUCT_NAME = "Animal Matching";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -489,11 +489,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arjundureja.AnimalMatching;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ArjunDureja.AnimalMatching;
 				PRODUCT_NAME = "Animal Matching";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -509,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72CF6BA423B42BC800F43CFB /* Build configuration list for PBXProject "AnimalMatching" */ = {
+		72CF6BA423B42BC800F43CFB /* Build configuration list for PBXProject "Animal Matching" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72CF6BBB23B42BCB00F43CFB /* Debug */,

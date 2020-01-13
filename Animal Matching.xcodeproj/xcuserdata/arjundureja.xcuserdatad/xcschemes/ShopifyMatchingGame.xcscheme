@@ -17,7 +17,7 @@
                BlueprintIdentifier = "72CF6BA823B42BC800F43CFB"
                BuildableName = "AnimalMatching.app"
                BlueprintName = "AnimalMatching"
-               ReferencedContainer = "container:AnimalMatching.xcodeproj">
+               ReferencedContainer = "container:Animal Matching.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "7220BD6623CBCBAA0005912E"
                BuildableName = "AnimalMatchingTests.xctest"
                BlueprintName = "AnimalMatchingTests"
-               ReferencedContainer = "container:AnimalMatching.xcodeproj">
+               ReferencedContainer = "container:Animal Matching.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,7 +57,7 @@
             BlueprintIdentifier = "72CF6BA823B42BC800F43CFB"
             BuildableName = "AnimalMatching.app"
             BlueprintName = "AnimalMatching"
-            ReferencedContainer = "container:AnimalMatching.xcodeproj">
+            ReferencedContainer = "container:Animal Matching.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "72CF6BA823B42BC800F43CFB"
             BuildableName = "AnimalMatching.app"
             BlueprintName = "AnimalMatching"
-            ReferencedContainer = "container:AnimalMatching.xcodeproj">
+            ReferencedContainer = "container:Animal Matching.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
