@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "72CF6BA823B42BC800F43CFB"
-               BuildableName = "AnimalMatching.app"
+               BuildableName = "Animal Matching.app"
                BlueprintName = "AnimalMatching"
                ReferencedContainer = "container:Animal Matching.xcodeproj">
             </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "72CF6BA823B42BC800F43CFB"
-            BuildableName = "AnimalMatching.app"
+            BuildableName = "Animal Matching.app"
             BlueprintName = "AnimalMatching"
             ReferencedContainer = "container:Animal Matching.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "72CF6BA823B42BC800F43CFB"
-            BuildableName = "AnimalMatching.app"
+            BuildableName = "Animal Matching.app"
             BlueprintName = "AnimalMatching"
             ReferencedContainer = "container:Animal Matching.xcodeproj">
          </BuildableReference>
