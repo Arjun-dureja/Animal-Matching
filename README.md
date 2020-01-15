@@ -20,7 +20,7 @@ Similar to golf, the lower the score, the better. Theoretically, the best score 
 This is what the user sees when they open the game. First they select a grid size, then they can tap play to start.
 
 ### Beginning of Game
-<img src="https://raw.githubusercontent.com/Arjun-dureja/Animal-Matching/blob/master/Screenshots/NoMatches.PNG" width="30%" height="30%">
+<img src="https://raw.githubusercontent.com/Arjun-dureja/Animal-Matching/master/Screenshots/NoMatches.png" width="30%" height="30%">
 
 Once the user taps the "Play" button, this screen is presented to them. All the cards are flipped over and their score is set to zero. The user can begin playing by tapping cards.
 
