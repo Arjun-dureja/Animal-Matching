@@ -29,21 +29,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var matched = 0
     var score = 0
     var gridSize = 10
+    var difficulty = 0
+    var numberWrong = 0
     
     var soundManager = SoundManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let layout = cardCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
+        self.view.backgroundColor = UIColor(red: 92/255, green: 200/255, blue: 247/255, alpha: 1)
+        
+        if difficulty == 1 {
+            self.view.backgroundColor = UIColor(red: 128/255, green: 131/255, blue: 198/255, alpha: 1)
+        }
+        
+        let layout = cardCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         // Set the gridsize of the cards depending on user input
         switch gridSize {
         case 15:
-            layout.itemSize = CGSize(width: 55, height: 95)
+            layout.itemSize = CGSize(width: view.bounds.width/6.5, height: view.bounds.height/8.5)
         case 20:
-            layout.itemSize = CGSize(width: 55, height: 70)
+            layout.itemSize = CGSize(width: view.bounds.width*0.15, height: view.bounds.height*0.085)
         default:
-            layout.itemSize = CGSize(width: 75, height: 112.5)
+            layout.itemSize = CGSize(width: view.bounds.width/5, height: view.bounds.height/7)
         }
         cardArray = model.getCards(gridSize)
         
@@ -61,6 +69,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         shuffleBtn.clipsToBounds = true;
         restartBtn.layer.cornerRadius = 15;
         restartBtn.clipsToBounds = true;
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if difficulty == 1 {
+            if UserDefaults.standard.value(forKey: "hardModeTutorial") == nil {
+                UserDefaults.standard.set("yes", forKey: "hardModeTutorial")
+                let ac = UIAlertController(title: "Hard Mode", message: "In Hard Mode, the cards shuffle when you get three matches wrong in a row!", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default)
+                ac.addAction(action)
+                self.present(ac, animated: true)
+            }
+        }
     }
     
     // Collection view protocol methods
@@ -110,26 +131,35 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cardOne.isMatched = true
             cardTwo.isMatched = true
             soundManager.playSound(.matched)
+            numberWrong = 0
+            
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
             
             // Update score and matched counter
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
                 self.matched += 1
                 self.matchedLabel.text = "Matched: \(self.matched)"
                 
-                self.score -= 1
+                self.score += 3
                 self.scoreLabel.text = "Score: \(self.score)"
             }
             
             // Check if all cards are matched
             if(checkWin()) {
                 // Win alert
-                let alert = UIAlertController(title: "You Win!", message: "Score: \(score-1)", preferredStyle: .alert)
+                let alert = UIAlertController(title: "You Win!", message: "Score: \(score+3)", preferredStyle: .alert)
                 
                 let alertAction = UIAlertAction(title: "Home", style: .default, handler: {
                         (UIAlertAction) in
-                        let vc = storyBoard.instantiateViewController(identifier: "home") as! HomeViewController
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: true, completion: nil)
+                    let vc = storyBoard.instantiateViewController(identifier: "home") as! HomeViewController
+                    vc.modalPresentationStyle = .fullScreen
+                    let transition = CATransition()
+                    transition.duration = 0.3
+                    transition.type = CATransitionType.push
+                    transition.subtype = CATransitionSubtype.fromBottom
+                    self.view.window!.layer.add(transition, forKey: kCATransition)
+                    self.present(vc, animated: false, completion: nil)
                 })
                 
                 alert.addAction(alertAction)
@@ -145,6 +175,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         // If cards do not match
         else {
+            if difficulty == 1 {
+                numberWrong += 1
+                if numberWrong == 3 {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.error)
+                        let button = UIButton()
+                        self.shuffleButton(button)
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.shuffleBtn.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                            self.shuffleBtn.backgroundColor = .red
+                        }, completion: { _ in
+                            UIView.animate(withDuration: 0.5) {
+                                self.shuffleBtn.transform = CGAffineTransform(scaleX: 1, y: 1)
+                                self.shuffleBtn.backgroundColor = .link
+                            }
+                        })
+                    }
+                    numberWrong = 0
+                }
+            }
             cardOne.isFlipped = false
             cardTwo.isFlipped = false
             
@@ -152,7 +203,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cardTwoCell?.flipBack(0.5)
             
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-                self.score += 1
+                if self.score != 0 {
+                    self.score -= 1
+                }
                 self.scoreLabel.text = "Score: \(self.score)"
             }
         }
@@ -213,7 +266,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBAction func homeButton(_ sender: UIButton) {
         let vc = storyBoard.instantiateViewController(identifier: "home") as! HomeViewController
         vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromBottom
+        view.window!.layer.add(transition, forKey: kCATransition)
+        self.present(vc, animated: false, completion: nil)
     }
     
     

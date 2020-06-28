@@ -21,6 +21,8 @@ class SoundManager {
     }
     
     func playSound(_ effect:SoundEffect) {
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
+        try? AVAudioSession.sharedInstance().setActive(true)
         var soundFileName = ""
         
         switch effect {
